@@ -61,7 +61,7 @@ $(function () {
                 if (res.status !== 0) {
                     return layer.msg(res.message);
                 }
-                layer.msg('注册成功！');
+                layer.msg('登录成功！');
                 //保存token数据
                 localStorage.setItem('token', res.token);
                 // 跳转到首页
