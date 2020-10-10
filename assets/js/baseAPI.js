@@ -4,7 +4,7 @@ $.ajaxPrefilter(function (options) {
     options.url = baseURL + options.url;
 
 
-    // 统一设置请求头
+    // 统一设置请求头l
     if (options.url.indexOf('/my/') !== -1) {
         options.headers = {
             Authorization: localStorage.getItem('token') || ''
