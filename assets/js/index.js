@@ -27,9 +27,9 @@ function getUserInfo() {
     $.ajax({
         method: 'GET',
         url: '/my/userinfo',
-        headers: {
-            Authorization: localStorage.getItem('token') || ''
-        },
+        // headers: {
+        //     Authorization: localStorage.getItem('token') || ''
+        // },
         success: function (res) {
             // console.log(res);
             if (res.status !== 0) {
@@ -38,15 +38,15 @@ function getUserInfo() {
             // 渲染用户头像
             renderAvatar(res.data);
         },
-        complete: function (res) {
-            // console.log(res);
-            if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
-                // 删除本地存储的token
-                localStorage.getItem('token');
-                // 跳转得到登录页面
-                location.href = '/login.html';
-            }
-        }
+        // complete: function (res) {
+        //     // console.log(res);
+        //     if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
+        //         // 删除本地存储的token
+        //         localStorage.getItem('token');
+        //         // 跳转得到登录页面
+        //         location.href = '/login.html';
+        //     }
+        // }
     })
 };
 
